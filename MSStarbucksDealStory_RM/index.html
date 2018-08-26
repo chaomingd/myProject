@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="loading.css">
+	<title>HUG18005_MSStarbucksDealStory</title>
+	<script src="http://s0.2mdn.net/ads/studio/Enabler.js" type="text/javascript"></script>
+</head>
+
+<body>
+	<div class="main-container">
+		<div id="floatingCirclesG">
+			<div class="f_circleG" id="frotateG_01"></div>
+			<div class="f_circleG" id="frotateG_02"></div>
+			<div class="f_circleG" id="frotateG_03"></div>
+			<div class="f_circleG" id="frotateG_04"></div>
+			<div class="f_circleG" id="frotateG_05"></div>
+			<div class="f_circleG" id="frotateG_06"></div>
+			<div class="f_circleG" id="frotateG_07"></div>
+			<div class="f_circleG" id="frotateG_08"></div>
+		</div>
+		<div class="swiper-container" id="swiper-container">
+			<div class="img-text">
+				<div class="logo">
+					<img src="images/logo.png" alt="">
+				</div>
+				<div class="img-ani" data-imgs="imgs">
+					<img class="imgs" data-src="images/copy1.png" alt="">
+					<div class="imgs">
+						<img data-src="images/copy2_1.png" alt="">
+						<img data-src="images/copy2_2.png" alt="">
+					</div>
+					<img class="imgs" data-src="images/copy3.png" alt="">
+					<img class="imgs" data-src="images/copy4.png" alt="">
+					<div class="imgs">
+						<img data-src="images/copy5_1.png" alt="">
+						<img data-src="images/copy5_2.png" alt="">
+					</div>
+					<img class="imgs" data-src="images/copy6.png" alt="">
+				</div>
+			</div>
+				<canvas id="ani1"></canvas>
+				<canvas id="ani2"></canvas>
+				<canvas id="ani3"></canvas>
+				<canvas id="ani4"></canvas>
+				<canvas id="ani5"></canvas>
+				<canvas id="ani6"></canvas>	
+			<div class="cta transition">
+				<img class="transition" src="images/cta1.jpg" alt="">
+				<img class="transition" src="images/cta2.jpg" alt="">
+			</div>
+			<div class="swiper-wrapper">
+				<div class="swiper-slide"></div>
+				<div class="swiper-slide"></div>
+				<div class="swiper-slide"></div>
+				<div class="swiper-slide"></div>
+				<div class="swiper-slide"></div>
+				<div class="swiper-slide"></div>
+			</div>
+			<div class="swiper-button-prev button-prev"></div>
+			<div class="swiper-button-next button-next"></div>
+		</div>
+		<div class="progress-container displayflex flex-hc flex-vc">
+			<div class="left-icon"></div>
+			<div class="progress" data-progress="progress">
+				<div class="progress-dot dot1"></div>
+				<div class="progress-dot dot2"></div>
+				<div class="progress-dot dot3"></div>
+				<div class="progress-dot dot4"></div>
+				<div class="progress-dot dot5"></div>
+				<div class="progress-dot dot6"></div>
+				<div class="progress-inner">
+					<div class="progress-background"></div>
+					<div class="progress-transparent">
+					</div>
+				</div>
+			</div>
+			<div class="right-icon"></div>
+		</div>
+	</div>
+	<script>
+		//***************==== js added ====>>>>>>>>***************//
+		var ua = window.navigator.userAgent.toLowerCase();
+		var isiPad = ua.match(/ipad/i) !== null;
+		var isFirefox = navigator.userAgent.match(/firefox/gi) !== null;
+		var isWin7 = window.navigator.userAgent.indexOf("Windows NT 6.1") != -1;
+		var isiPad = ua.match(/ipad/i) !== null;
+		var iOS = parseFloat(
+			('' + (/CPU.*OS ([0-9_]{1,5})|(CPU like).*AppleWebKit.*Mobile/i.exec(navigator.userAgent) || [0, ''])[1])
+			.replace('undefined', '3_2').replace('_', '.').replace('_', '')
+		) || false;
+
+		var isLowPe = isFirefox && isWin7 || isiPad && (iOS < 10);
+		var isDesktop = !ua.match(/Android|ipad|webOS|iPhone|iPod|BlackBerry|IEMobile/i);
+		var isRetina = function () {
+			var mediaQuery =
+				"(-webkit-min-device-pixel-ratio: 1.5),\
+                      (min--moz-device-pixel-ratio: 1.5),\
+                      (-o-min-device-pixel-ratio: 3/2),\
+                      (min-resolution: 1.5dppx)";
+			if (window.devicePixelRatio > 1) return true;
+			if (window.matchMedia && window.matchMedia(mediaQuery).matches) return true;
+			return false;
+		}();
+
+		isRetina = isRetina || isLowPe;
+		if (!Array.prototype.indexOf) {
+			Array.prototype.indexOf = function (obj) {
+				for (var i = 0, il = this.length; i < il; i++) {
+					if (this[i] == obj) {
+						return i;
+					}
+				}
+			};
+		}
+
+		//Initialize Enabler
+		//https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js
+		var loadActionSequence = [
+			'swiper-4.3.5.min.js',
+			'https://code.createjs.com/createjs-2015.11.26.min.js',
+			'global.js',
+			'assets/1/1.js',
+			'assets/2/2.js',
+			'assets/3/3.js',
+			'assets/4/4.js',
+			'assets/5/5.js',
+			'assets/6/6.js',
+			'animationController.js',
+			'app.js'
+		]
+		var actionLoadedIndex = 0;
+
+		if (Enabler.isInitialized()) {
+			init();
+		} else {
+			Enabler.addEventListener(studio.events.StudioEvent.INIT, init);
+		}
+
+		function init() {
+			if (Enabler.isPageLoaded()) {
+				politeInit();
+			} else {
+				Enabler.addEventListener(studio.events.StudioEvent.PAGE_LOADED, politeInit);
+			}
+		}
+
+		function politeInit() {
+			loadJs(loadActionSequence[actionLoadedIndex], function () {
+				actionLoadedIndex += 1;
+				if (actionLoadedIndex < loadActionSequence.length) politeInit();
+				else {
+					setTimeout(function () {
+						console.log('initApp')
+						initApp()
+					}, 0)
+				}
+			})
+		}
+
+		function loadJs(file, complete) {
+			var ej = document.createElement('script');
+			ej.setAttribute('type', 'text/javascript');
+			ej.setAttribute('src', file);
+			document.getElementsByTagName('head')[0].appendChild(ej);
+			ej.doneState = {
+				loaded: true,
+				complete: true
+			};
+			if (ej.onreadystatechange !== undefined) {
+				ej.onreadystatechange = function () {
+					if (ej.doneState[ej.readyState]) {
+						complete();
+					}
+				}
+			} else {
+				ej.onload = function () {
+					complete();
+				};
+			}
+		};
+	</script>
+</body>
+
+</html>
