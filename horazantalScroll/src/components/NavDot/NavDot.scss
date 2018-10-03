@@ -1,0 +1,304 @@
+@import '~nytpi-sass-utils/index';
+@import '~nytpi-sass-utils/size-class';
+@import '~nytpi-sass-utils/font-size';
+@import "../../scss/variables";
+@include set-pspx-ratio(1);
+
+@include size-class($compact) {
+	.nav-container {
+		display: none;
+	}
+}
+
+.nav-container {
+	position: fixed;
+	width: 100%;
+	max-width: 1605px;
+	left: 0;
+	top: 118px;
+	z-index: 9999;
+
+	@include size-class(shell) {
+		left: calc((100% - 1605px) / 2);
+		right: calc((100% - 1605px) / 2);
+	}
+}
+
+.NavTitle {
+	position: absolute;
+	display: block;
+	font-size: 14px;
+	line-height: 26px;
+	margin-left: 4.5em;
+	top: 10px;
+	z-index: 999;
+	color: #f7740a;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+	font-family: 'Overpass', sans-serif;
+	font-weight: bold;
+	opacity: 0;
+
+	&.active {
+		opacity: 1;
+		transition: opacity .3s ease-out;
+		// transition-delay: .3s;
+	}
+}
+
+.NavTitle1 {
+	color: #f7740a;
+}
+
+.NavTitle2 {
+	color: #2a8c1f;
+}
+
+.NavTitle3 {
+	color: #0992d1;
+}
+
+.Navigation {
+	.item1 {
+		.child-dot {
+			&:hover {
+				.inner {
+					background-color: #000;
+				}
+
+				.outer {
+					border: 1px solid #000;
+				}
+			}
+		}
+	}
+
+	.item2 {
+		.child-dot {
+			&:hover {
+				.inner {
+					background-color: #000;
+				}
+
+				.outer {
+					border: 1px solid #000;
+				}
+			}
+		}
+	}
+
+	.item3 {
+		.child-dot {
+			&:hover {
+				.inner {
+					background-color: #000;
+				}
+
+				.outer {
+					border: 1px solid #000;
+				}
+			}
+		}
+	}
+
+	.item4 {
+		.child-dot {
+			&:hover {
+				.inner {
+					background-color: #000;
+				}
+
+				.outer {
+					border: 1px solid #000;
+				}
+			}
+		}
+	}
+
+	.item5 {
+		.child-dot {
+			&:hover {
+				.inner {
+					background-color: #000;
+				}
+
+				.outer {
+					border: 1px solid #000;
+				}
+			}
+		}
+	}
+
+	.child-dot {
+		
+		&[active] {
+			.inner {
+				opacity: 1;
+				transform: scale(.8);
+			}
+			.outer {
+				opacity: 1;
+				transform: scale(1.6);
+			}
+		}
+
+		&:hover {
+			.inner {
+				opacity: 1;
+				transform: scale(.8);
+			}
+			.outer {
+				opacity: 1;
+				transform: scale(1.6);
+			}
+		}
+	}
+}
+
+
+.Navigation {
+	position: absolute;
+	display: flex;
+	left: 50%;
+	transform: translate(-50%, 0);
+	z-index: 9999;
+	height: 40px;
+	cursor: pointer;
+
+	.dot-item {
+		display: flex;
+		align-items: center;
+	}
+
+	.item1 {
+		.child-dot {
+			&.active {
+				.inner {
+					background-color: #000;
+				}
+
+				.outer {
+					border: 1px solid #000;
+				}
+			}
+		}
+	}
+
+	.item2 {
+		.child-dot {
+			&.active {
+				.inner {
+					background-color: #64461e;
+				}
+
+				.outer {
+					border: 1px solid #64461e;
+				}
+			}
+		}
+	}
+
+	.item3 {
+		.child-dot {
+			&[active] {
+				.inner {
+					background-color: #245127;
+				}
+
+				.outer {
+					border: 1px solid #245127;
+				}
+			}
+		}
+	}
+
+	.item4 {
+		.child-dot {
+			&[active] {
+				.inner {
+					background-color: #003f5e;
+				}
+
+				.outer {
+					border: 1px solid #003f5e;
+				}
+			}
+		}
+	}
+
+	.item5 {
+		.child-dot {
+			&[active] {
+				.inner {
+					background-color: #000;
+				}
+
+				.outer {
+					border: 1px solid #000;
+				}
+			}
+		}
+	}
+
+	.child-dot {
+		position: relative;
+		flex: 0 0 auto;
+		width: 10px;
+		height: 10px;
+		margin: 0 10px;
+
+		&:nth-child(1) {
+			width: 16px;
+			height: 16px;
+
+			&.active {
+				.inner {
+					opacity: 1;
+					transform: scale(.8);
+				}
+
+				.outer {
+					opacity: 1;
+					transform: scale(1.6);
+				}
+			}
+		}
+
+		&.active {
+			.inner {
+				opacity: 1;
+				transform: scale(.8);
+			}
+
+			.outer {
+				opacity: 1;
+				transform: scale(1.6);
+			}
+		}
+
+		.inner {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+			background-color: #000;
+			opacity: .3;
+			transform: scale(1) translate3d(0, 0, 0);
+			transition: opacity .3s ease, transform .3s ease, background-color .3s ease;
+		}
+
+		.outer {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: -1px;
+			left: -1px;
+			border-radius: 50%;
+			border: 1px solid #000;
+			transform: scale(1) translate3d(0, 0, 0);
+			opacity: 0;
+			transition: opacity .3s ease, transform .3s ease, ;
+			z-index: -1;
+		}
+	}
+}

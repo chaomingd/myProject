@@ -1,0 +1,36 @@
+@import '~nytpi-sass-utils/index';
+@import '~nytpi-sass-utils/size-class';
+@import '~nytpi-sass-utils/font-size';
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400i,600');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+@import url('https://fonts.googleapis.com/css?family=Overpass:600,800,900|Roboto:400,900|Overpass+Mono:700');
+@import "./scss/variables";
+
+@include set-pspx-ratio(1);
+
+/////////////////////////////
+// Write your styles here! //
+/////////////////////////////
+.PaidPost{
+    padding: 0 !important;
+    @include size-class($compact) {
+        overflow-x: hidden;
+    }
+}
+:global{
+    #site-index{
+        display: none !important;
+    }
+    // #paid-top-bar-container{
+    //     height: 132px !important;
+    // }
+}
+canvas{
+    display: block;
+    width: 100%;
+}
+
+
+// Make sure this is the last line of the file.
+@include set-pspx-ratio(2);

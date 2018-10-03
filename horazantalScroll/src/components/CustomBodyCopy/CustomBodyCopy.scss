@@ -1,0 +1,104 @@
+@import '~nytpi-sass-utils/index';
+@import '~nytpi-sass-utils/size-class';
+@import '~nytpi-sass-utils/font-size';
+@import "../../scss/variables";
+@include set-pspx-ratio(1);
+
+.CustomBodyCopy {
+  position: relative;
+  width: 20em;
+  min-width: 0;
+  font-weight: 400;
+  margin-left: 3em;
+  margin-top: 1.6em;
+  margin-right: 0em;
+  z-index: 99;
+  h1 {
+    &::after {
+      content: "";
+      display: block;
+      height: 6px;
+      width: 24.6%;
+      margin-top: .45em;
+    }
+  }
+  p {
+    width: 70%;
+    span {
+      font-weight: bold;
+    }
+  }
+  @include size-class($compact) {
+    width: 92%;
+    margin-left: 0;
+    margin: 0 auto;
+    h1 {
+      &::after {
+        display: none;
+      }
+    }
+    p {
+      width: 100%;
+    }
+  }
+}
+
+.CustomBodyCopy1 {
+  h1 {
+    &::after {
+      background-color: #f47420;
+    }
+  }
+  p {
+    sup {
+      color: #f47420;
+      font-weight: 900;
+      line-height: 1em;
+    }
+  }
+}
+
+.CustomBodyCopy2 {
+  h1 {
+    &::after {
+      background-color: #2a8c1f;
+    }
+  }
+  p {
+    sup {
+      color: #2a8c1f;
+      font-weight: 900;
+      line-height: 1em;
+    }
+  }
+  @include size-class($compact) {
+    h1 {
+      width: 59% !important;
+    }
+    @include size-class(compact) {
+      h1 {
+        width: 100% !important;
+      }
+    }
+  }
+}
+
+.CustomBodyCopy3 {
+  h1 {
+    &::after {
+      background-color: #0992d1;
+    }
+  }
+  p {
+    sup {
+      color: #0992d1;
+      font-weight: 900;
+      line-height: 1em;
+    }
+  }
+  @include size-class($compact) {
+    h1 {
+      width: 78% !important;
+    }
+  }
+}

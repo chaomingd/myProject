@@ -1,0 +1,150 @@
+@import '~nytpi-sass-utils/index';
+@import '~nytpi-sass-utils/size-class';
+@import '~nytpi-sass-utils/font-size';
+
+
+@import "../../scss/variables";
+
+
+@include set-pspx-ratio(1);
+.mainContainer{
+  display: block;
+  opacity: 1;
+  // visibility: hidden;
+  // &[active]{
+  //   display: block;
+  // }
+  // &[show]{
+  //   opacity: 1;
+  //   transition: opacity .1s ease .3s;
+  //   visibility: visible;
+  // }
+}
+
+.mask {
+	position: fixed;
+	top: 118px;
+	height: calc(100% - 117px);
+	overflow: hidden;
+	width: 100%;
+	left: 0;
+	max-width: 1605px !important;
+	@include size-class(shell) {
+		left: calc(50% - #{1605 / 2 * 1px});
+	}
+	background: #fff;
+	z-index: 9999;
+	flex: none !important;
+}
+
+.scrollContainer {
+	position: fixed;
+	top: 118px;
+	height: calc(100% - 117px);
+	overflow: hidden;
+	width: 100%;
+	left: 0;
+	max-width: 1605px !important;
+	@include size-class(shell) {
+		left: calc(50% - #{1605 / 2 * 1px});
+	}
+	@include size-class(mobile-portrait to tablet-portrait) {
+		position: relative;
+		top: auto !important;
+		height: auto;
+	}
+  @include size-class($compact) {
+    // padding-left: 15/320 * 100%;
+    // padding-right: 15/320 * 100%;
+    background-color: rgb(247,244,237);
+    :global{
+      .ppc--BodyCopy--root{
+        font-size: 1em;
+        h1{
+          font-size: 8.2vw;
+          font-family: "Overpass";
+          line-height: 1.1em;
+          letter-spacing: -0.04em;
+          margin-bottom: .38em;
+          width: 107%;
+        }
+        p{
+          line-height: 1.95em;
+          font-size: 14px;
+          font-family: 'Roboto', sans-serif;
+          margin-bottom: .5em;
+        }
+      }
+    }
+  }
+
+  @include size-class($regular) {
+    max-width: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    will-change: all;
+    height: calc(100vh - 117px);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    .backup{
+      position: absolute;
+      width: 4000px;
+      opacity: 0;
+      display: none;
+    }
+    & > * {
+      flex: 0 0 auto;
+    }
+    
+    @media (min-width: get-pspx-width(tablet-landscape min px) - 1px) {
+      font-size: px($base-font-size) / px($viewport-height) * 100vh;
+      :global{
+        .ppc--BodyCopy--root{
+          font-size: 1em;
+          h1{
+            font-size: 2.2em;
+            font-family: "Overpass";
+            line-height: 1em;
+            letter-spacing: -0.01em;
+            margin-bottom: 1em;
+            span{
+              display: block;
+            }
+          }
+          p{
+            line-height: 2em;
+            font-size: .75em;
+            font-family: 'Roboto', sans-serif;
+            margin-bottom: .5em !important;
+          }
+        }
+      }
+    }
+    @media (min-width: get-pspx-width(tablet-landscape min px)) and (min-height: get-pspx-width(shell px) / get-pspx-width(desktop px) * px($viewport-height)) {
+      // font-size: 20px;
+      font-size: px($base-font-size) / px($viewport-height) * 100vh;
+    }
+  }
+}
+:global(.ipad){
+  @include size-class($regular) {
+    &[safari]{
+      .scrollContainer{
+        font-size: 15px !important;
+        &[scroll-end]{
+          height: calc(100vh - 240px) !important;
+        }
+      }
+    }
+  }
+}
+.verticalScrollElement {
+	height: 20000px;
+	@include size-class(mobile-portrait to tablet-portrait) {
+		height: 0px;
+	}
+}
+

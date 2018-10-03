@@ -5,18 +5,18 @@ function AniController(aniRoot, aniStage, fps) {
 	this.autoPlay = true;
 	this.tickHander = this.tickHander.bind(this);
 	var that = this;
-	this.root.anibox.addEventListener('playEnd',  ()=> {
+	this.root.anibox.addEventListener('playEnd',  function() {
 		that.offTicker();
 	});
-	this.root.anibox.addEventListener('stopMiddle',()=> {
-		if(!this.autoPlay){
-			this.offTicker();
+	this.root.anibox.addEventListener('stopMiddle',function() {
+		if(!that.autoPlay){
+			that.offTicker();
 		}
 	})
 	if(this.root.anibox.firstAni){
-		this.root.anibox.firstAni.addEventListener('stopMiddle',()=> {
-			if(!this.autoPlay){
-				this.offTicker();
+		this.root.anibox.firstAni.addEventListener('stopMiddle',function() {
+			if(!that.autoPlay){
+				that.offTicker();
 			}
 		})
 	}
@@ -126,4 +126,5 @@ CjsLoader.load = function (AdobeAn,CompositionId, canvasSelector, callBack) {
 		callBack && callBack(controller,controllerIndex);
 	};
 }
+
 

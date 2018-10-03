@@ -516,13 +516,13 @@ p.nominalBounds = new cjs.Rectangle(18,-2,239.7,220.8);
 	this.frame_39 = function() {
 		this.dispatchEvent('stopMiddle');
 	}
-	this.frame_196 = function() {
+	this.frame_246 = function() {
 		this.stop();
 		this.dispatchEvent('playEnd');
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).wait(39).call(this.frame_39).wait(157).call(this.frame_196).wait(4));
+	this.timeline.addTween(cjs.Tween.get(this).wait(39).call(this.frame_39).wait(207).call(this.frame_246).wait(1));
 
 	// Layer_1
 	this.instance = new lib.hand1();
@@ -530,7 +530,7 @@ p.nominalBounds = new cjs.Rectangle(18,-2,239.7,220.8);
 	this.instance.setTransform(269.1,-108.2,1,1,0,0,0,109.4,102.8);
 	this.instance._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1).to({_off:false},0).to({guide:{path:[269,-108.1,204.3,19.6,108.8,102.7]}},35,cjs.Ease.quadOut).wait(164));
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1).to({_off:false},0).to({guide:{path:[269,-108.1,204.3,19.6,108.8,102.7]}},35,cjs.Ease.quadOut).wait(211));
 
 	// Layer_3
 	this.instance_1 = new lib.Symbol3();
@@ -538,7 +538,7 @@ p.nominalBounds = new cjs.Rectangle(18,-2,239.7,220.8);
 	this.instance_1.setTransform(-207.9,-169.5,1,1,0,0,0,118,103.7);
 	this.instance_1._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_1).wait(129).to({_off:false},0).to({guide:{path:[-207.8,-169.4,-122.6,-13.2,21.4,104.4]}},36,cjs.Ease.quadOut).wait(35));
+	this.timeline.addTween(cjs.Tween.get(this.instance_1).wait(176).to({_off:false},0).to({guide:{path:[-207.8,-169.4,-122.6,-13.2,21.4,104.4]}},36,cjs.Ease.quadOut).wait(35));
 
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = null;
@@ -549,12 +549,12 @@ p.nominalBounds = null;
 	this.initialize(mode,startPosition,loop,{});
 
 	// timeline functions:
-	this.frame_219 = function() {
+	this.frame_267 = function() {
 		this.stop();
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).wait(219).call(this.frame_219).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this).wait(267).call(this.frame_267).wait(1));
 
 	// Layer_3
 	this.anibox = new lib.Symbol1();
@@ -562,7 +562,7 @@ p.nominalBounds = null;
 	this.anibox.parent = this;
 	this.anibox.setTransform(302.8,101.6,1,1,0,0,0,109.4,102.8);
 
-	this.timeline.addTween(cjs.Tween.get(this.anibox).wait(220));
+	this.timeline.addTween(cjs.Tween.get(this.anibox).wait(268));
 
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(-130,125,970,250);

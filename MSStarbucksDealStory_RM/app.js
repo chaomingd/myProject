@@ -73,14 +73,18 @@ var show = (function () {
 			if (index === 1 || index === 4) {
 				var firstImg = imgtransform[index].querySelector('.firstImg');
 				var secondImg = imgtransform[index].querySelector('.secondImg');
+				firstImg.style.opacity = '1';
+				firstImg.style.zIndex = '1';
 				secondImg.style.transitionDelay = '.5s';
 				setTimeout(function () {
 					firstImg.style.opacity = '0';
+					firstImg.style.zIndex = '0';
 					secondImg.style.opacity = '1';
+
 					setTimeout(function () {
 						secondImg.style.transitionDelay = '0s';
 					}, 500);
-				}, index === 1?3000:3000);
+				}, index === 1?5000:4500);
 			}else {
 				for (var divindex = 0; divindex < divImgs.length; divindex++) {
 					(function (divindex) {
@@ -88,7 +92,7 @@ var show = (function () {
 						var firstImg = divImgs[divindex].querySelector('.firstImg');
 						if(secondImg) secondImg.style.opacity = '0';
 						if(firstImg ) firstImg.style.transitionDelay = '.1s';
-						if(firstImg) firstImg.style.opacity = '1';
+						if(firstImg) {firstImg.style.opacity = '1';firstImg.style.zIndex = '1'};
 					})(divindex);
 				}
 			}
@@ -99,7 +103,7 @@ var show = (function () {
 					var firstImg = divImgs[divindex].querySelector('.firstImg');
 					if(secondImg) secondImg.style.opacity = '0';
 					if(firstImg ) firstImg.style.transitionDelay = '.1s';
-					if(firstImg) firstImg.style.opacity = '1';
+					if(firstImg) {firstImg.style.opacity = '1';firstImg.style.zIndex = '1'};
 				})(divindex);
 			}
 		}
@@ -204,10 +208,10 @@ function initApp() {
 	var imgtransform = document.querySelectorAll('[data-imgs="imgs"] .imgs');
 	var loading = document.getElementById('loading');
 	var canvases = swiperContainer.getElementsByTagName('canvas');
-	var innerDots = swiperContainer.getElementsByClassName('inner-dot');
+	var innerDots = progress.getElementsByClassName('inner-dot');
 	var imgTrick = document.querySelector('[data-imgs="imgs"]');
 	var canvasTrick = document.getElementById('canvas');
-	var legal1 = swiperContainer.querySelector('.legal1 a');
+	var legal1s = swiperContainer.querySelectorAll('.legal1 a');
 	var legal2 = swiperContainer.querySelector('.legal2 a');
 	var prevBtn = swiperContainer.querySelector('.swiper-button-prev');
 	var nextBtn = swiperContainer.querySelector('.swiper-button-next');
@@ -226,10 +230,15 @@ function initApp() {
 			for(var i = 0; i < this.length; i ++){
 				(function(i) {
 					realInterval += interval;
+					if(i === 0){
+						realInterval += 750;
+					}
 					if(i === 1){
-						realInterval += 3500;
+						realInterval += 5750;
+					}else if(i === 3){
+						realInterval += 1500;
 					}else if(i === 4){
-						realInterval += 3500;
+						realInterval += 5000;
 					}
 					that.timer[i] = setTimeout(function() {
 						if(!that.autoplay) return;
@@ -283,7 +292,7 @@ function initApp() {
 						swiperContainer.style.background = colors[that.activeIndex];
 						for(var i = 0;i < innerDots.length; i ++){
 							var dot = innerDots[i];
-							dot.style.background = colos[that.activeIndex];
+							dot.style.background = colors[that.activeIndex];
 						}
 						show(imgtransform, that.activeIndex, cta, mySwiper.navigation.prevEl, canvases,mySwiper,swiperCtr);
 						for (var i = 0; i < controllers.length; i++) {
@@ -346,10 +355,10 @@ function initApp() {
 						secondImg.style.transitionDelay = '0s'
 						secondImg.style.opacity = '0';
 						firstImg.style.opacity = '1';
+						firstImg.style.zIndex ='1';
 						// controllers[mySwiper.activeIndex].controller.pause();
 						window.anibox = controllers[mySwiper.activeIndex].controller;
 						controllers[mySwiper.activeIndex].controller.play(0);
-						console.log('play')
 						// setTimeout(function () {
 						// 	secondImg.style.transitionDelay = '0s';
 						// }, 500);
@@ -385,12 +394,12 @@ function initApp() {
 						var secondImg = imgtransform[mySwiper.activeIndex].querySelector('.secondImg');
 						secondImg.style.transitionDelay = '.5s';
 						firstImg.style.transitionDelay = '0s';
+						firstImg.style.zIndex ='0';
 						firstImg.style.opacity = '0';
 						secondImg.style.opacity = '1';
 						// controllers[mySwiper.activeIndex].controller.pause();
 						window.anibox = controllers[mySwiper.activeIndex].controller;
-						controllers[mySwiper.activeIndex].controller.play(120);
-						console.log('play')
+						controllers[mySwiper.activeIndex].controller.play(170);
 						// setTimeout(function () {
 						// 	secondImg.style.transitionDelay = '0s';
 						// }, 500);
@@ -413,7 +422,6 @@ function initApp() {
 			return false;
 		});
 		swiperWrapper.addEventListener('click', function () {
-			console.log('exit');
 			setTimeout(function () {
 				Enabler.exit('background_clicked_x');
 			}, 50);
@@ -427,54 +435,51 @@ function initApp() {
 				}, 1000);
 			}
 		});
-		legal1.addEventListener('click',function(e) {
+		function legalExite(e,that) {
 			var ev = e || event;
 			ev.preventDefault();
-			if(ev.stopPropagation){
-				ev.stopPropagation();
-			}else {
-				ev.cancelable = true;
-			}
+			ev.stopPropagation();
+			ev.cancelable = true;
 			if(swiperCtr.autoplay){
 				swiperCtr.pause(controllers);
 			}
-			
-			this.parentNode.classList.add('out');
+			that.parentNode.classList.add('out');
+			return false;
+		}
+		function legalMounseter(that) {
+			if(that.parentNode.classList.contains('out')){
+				that.parentNode.classList.remove('out');
+			}
+		}
+		legal1s[0].addEventListener('click',function(e) {
+			legalExite(e,this);
 			Enabler.exit('legal_url1_clicked_x');
 			return false;
 		});
-		legal1.addEventListener('mouseenter',function() {
-			if(this.parentNode.classList.contains('out')){
-				this.parentNode.classList.remove('out');
-			}
+		legal1s[0].addEventListener('mouseenter',function() {
+			legalMounseter(this);
+		});
+		legal1s[1].addEventListener('click',function(e) {
+			legalExite(e,this);
+			Enabler.exit('legal_url1_clicked_x');
+			return false;
+		});
+		legal1s[1].addEventListener('mouseenter',function() {
+			legalMounseter(this);
 		});
 		legal2.addEventListener('click',function(e) {
-			var ev = e || event;
-			ev.preventDefault();
-			if(ev.stopPropagation){
-				ev.stopPropagation();
-			}else {
-				ev.cancelable = true;
-			}
-			if(swiperCtr.autoplay){
-				swiperCtr.pause(controllers);
-			}
-			this.parentNode.classList.add('out');
+			legalExite(e,this);
 			Enabler.exit('legal_url2_clicked_x');
 			return false;
 		});
 		legal2.addEventListener('mouseenter',function() {
-			console.log(this.parentNode.classList.contains('out'));
-			if(this.parentNode.classList.contains('out')){
-				this.parentNode.classList.remove('out');
-			}
+			legalMounseter(this);
 		});
 		imgTrick.addEventListener('click',function() {
 			setTimeout(function () {
 				Enabler.exit('background_clicked_x');
 			}, 50);
 			if(swiperCtr.autoplay){
-				console.log('jjjjjjj')
 				swiperCtr.pause(controllers);
 				swiperCtr.canLastPlay = false;
 				mySwiper.slideTo(progressDots.length - 1,20);
@@ -497,7 +502,6 @@ function initApp() {
 				Enabler.exit('background_clicked_x');
 			}, 50);
 			if(swiperCtr.autoplay){
-				console.log('jjjjjjj')
 				swiperCtr.pause(controllers);
 				swiperCtr.canLastPlay = false;
 				mySwiper.slideTo(progressDots.length - 1,20);
