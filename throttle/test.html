@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="throttle.js"></script>
+</head>
+
+<body>
+	<div style="height: 20000px"></div>
+	<script>
+		var count = 0;
+		function myFn () {
+			count ++ ;
+			console.log(count)
+		}
+
+		var fn = throttle(myFn,300);
+		window.onscroll = function() {
+			fn();
+		}
+	</script>
+</body>
+
+</html>
