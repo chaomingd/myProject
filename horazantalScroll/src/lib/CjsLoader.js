@@ -75,24 +75,10 @@ class AniController {
 }
 
 this.CjsLoader = CjsLoader || {};
-this.CjsLoader.load = function(CompositionId, container, callBack) {
+this.CjsLoader.load = function(CompositionId, container,aniCanvas, callBack) {
     createjs.MotionGuidePlugin.install();
-    const aniCanvas = document.createElement('canvas');
     const comp = AdobeAn.getComposition(CompositionId);
     const lib = comp.getLibrary();
-    container.appendChild(aniCanvas);
-    if (lib.properties.manifest.length === 0) {
-        handleComplete({}, comp);
-    }
-
-    function handleFileLoad(evt) {
-        const images = comp.getImages();
-        console.log(evt);
-        if (evt && evt.item.type === 'image') {
-            images[evt.item.id] = evt.result;
-        }
-    }
-
     function handleComplete(evt) {
         const ss = comp.getSpriteSheet();
         const queue = evt.target;
@@ -104,7 +90,8 @@ this.CjsLoader.load = function(CompositionId, container, callBack) {
             });
         }
         const exportRoot = new lib.Root();
-        const stage = new lib.Stage(aniCanvas);
+				const stage = new lib.Stage(aniCanvas);
+				stage.removeAllChildren();
         stage.addChild(exportRoot);
         const tempW = lib.properties.width;
         const tempH = lib.properties.height;
@@ -117,7 +104,7 @@ this.CjsLoader.load = function(CompositionId, container, callBack) {
         if (callBack) callBack(controller);
     }
     if (lib.properties.manifest.length === 0) {
-        // handleFileLoad({}, comp);
+			handleComplete({}, comp);
     } else {
         const compImg = comp.getImages();
         const manifestLen = lib.properties.manifest.length;

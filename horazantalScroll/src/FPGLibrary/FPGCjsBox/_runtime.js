@@ -31,13 +31,25 @@ function initObserver() {
     childObserver.observe(this.cjsCon);
 }
 
-export default function didMount() {
-    CjsLoader.load(compositionIds[this.cjsName], this.cjsCon, aniObj => {
-        this.aniObj = aniObj;
-        this.aniObj.innerRender = this.innerRender;
-        this.aniObj.pause(0);
-    });
-    if (!this.props.isControl) {
-        initObserver.call(this);
-    }
+function Loader(cjsName) {
+	CjsLoader.load(compositionIds[cjsName],this.cjsCon,this.aniCanvas, aniObj => {
+		this.aniObj = aniObj;
+		window.aniObj = aniObj;
+		this.aniObj.innerRender = this.innerRender;
+		this.aniObj.play();
+	});
+	if(!this.observed) {
+		initObserver.call(this);
+		this.observed = true;
+	}
 }
+
+export default function didMount() {
+	Loader.call(this,this.cjsName);
+}
+
+function willReaciveProps(nextProps) {
+	Loader.call(this,nextProps.cjsName);
+}
+
+export { willReaciveProps }
