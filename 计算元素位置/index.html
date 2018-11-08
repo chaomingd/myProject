@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+
+<body>
+	<div style="height: 2000px"></div>
+	<div id="test" style="height: 300px;width: 300px;background: #ddd;"></div>
+	<script>
+		function getElementTop(element) {
+			var actualTop = element.offsetTop;
+			var current = element.offsetParent;
+
+			while (current !== null) {
+				actualTop += current.offsetTop;
+				current = current.offsetParent;
+			}
+
+			return actualTop;
+		}
+
+
+		function getAbsPos(el) {
+			return {
+				top: el.getBoundingClientRect().top + (document.documentElement.scrollTop||document.body.scrollTop),
+				left: el.getBoundingClientRect().left + (document.documentElement.scrollTop||document.body.scrollLeft)
+			}
+		}
+		window.onload = function () {
+			var test = document.getElementById('test');
+			var top1 = getElementTop(test);
+			var top2 = getAbsTop(test);
+			console.log(top1, top2)
+			window.addEventListener('scroll', () => {
+				var top1 = getElementTop(test);
+				var top2 = getAbsTop(test);
+				console.log(top1, top2)
+			})
+		}
+	</script>
+</body>
+
+</html>
