@@ -1,0 +1,36 @@
+.FPGAnimator {
+    &[data-fade] {
+        opacity: 0;
+        &[data-active] {
+            opacity: 1;
+            transition: opacity 0.5s;
+        }
+    }
+    &[data-fade-bottom] {
+        opacity: 0;
+        transform: translateY(70px);
+        &[data-active] {
+            opacity: 1;
+            transform: translateY(0px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+    }
+    &[data-fade-left] {
+        opacity: 0;
+        transform: translateX(-50%);
+        &[data-active] {
+            opacity: 1;
+            transform: translateX(0%);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+    }
+    &[data-fade-right] {
+        opacity: 0;
+        transform: translateX(50%);
+        &[data-active] {
+            opacity: 1;
+            transform: translateX(0%);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+    }
+}

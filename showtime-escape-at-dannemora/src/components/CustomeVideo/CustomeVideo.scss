@@ -1,0 +1,62 @@
+@import '~nytpi-sass-utils/size-class';
+@import '../../scss//fn.scss';
+
+@include set-pspx-ratio(1);
+
+.VideoMatte {
+	// :global(.ppc--Placement--content) {
+	// 	width: 768/1264*100%;
+	// }
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+	:global(.ppc--Placement--root-center-x-large > .ppc--Placement--content) {
+		@media (min-width: 854px) {
+			width: 768/1264*100%;
+		}
+	}
+	:global{
+		.ppc--VideoPlayer--vhs .vhs-media-action-overlay.vhs-homepage-cover, .ppc--VideoPlayer--fakeCover .vhs-media-action-overlay.vhs-homepage-cover {
+			padding-bottom: 75px;
+			@include size-class(compact) {
+				padding-bottom: 41px;
+			}
+		}
+		.ppc--Placement--withHorizontalPadding .ppc--Placement--content {
+			@include size-class(compact) {
+				padding: 0 !important;
+			}
+		}
+		.vhs-video-title {
+			font-size: 24px !important;
+			line-height: lh(24,26) !important;
+		}
+	}
+	@media (max-width: 640px) {
+		margin-top: 68px !important;
+	}
+}
+.videoTitle {
+	font-family: 'Lato',sans-serif;
+	color: #fff;
+	font-size: ptem(27,18);
+	line-height: ptem(36,27);
+	text-transform: none;
+	font-weight: 400;
+	margin-bottom: 1em;
+	letter-spacing: .020em;
+	text-align: center;
+	@include size-class(compact) {
+		font-size: 18/320*100vw;
+		line-height: lh(18,20);
+
+	}
+	span {
+		display: block;
+	}
+}
+
+
+
+@include set-pspx-ratio(2);

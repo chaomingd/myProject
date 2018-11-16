@@ -1,0 +1,57 @@
+@import '~nytpi-sass-utils/size-class';
+@import '../../scss//fn.scss';
+
+@include set-pspx-ratio(1);
+
+.marginTop {
+	@media (max-width: 640px) {
+		margin-top: 44px;
+	}
+}
+
+.CustomeBodyCopy {
+	@media (max-width: 640px) {
+		margin-top: 44px;
+	}
+	p {
+		font-weight: 700;
+		letter-spacing: 0;
+		font-size: ptem(18);
+		line-height: ptem(36);
+		@include size-class(compact) {
+			font-size: 1em;
+			line-height: ptem(32);
+			letter-spacing: .008em;
+		}
+	}
+}
+
+.hr {
+	width: 100%;
+	height: 0;
+	border-bottom: 1px solid #fff;
+}
+.rule {
+	margin-top: 58/1280*100vw;
+	width: ptem(62);
+	height: 0;
+	border-bottom: 1px solid #fff;
+	@include size-class(shell) {
+		margin-top: 58/1280*1605px;
+	}
+	@media (max-width: 640px) {
+		margin-top: 61px;
+	}
+}
+.sourceCopy {
+	font-family: 'Open Sans',sans-serif !important;
+	color: #fff;
+	font-weight: 300;
+	font-style: italic;
+	margin-top: 1em;
+	line-height: ptem(28);
+	letter-spacing: 0;
+}
+
+
+@include set-pspx-ratio(2);

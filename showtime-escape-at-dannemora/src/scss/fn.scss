@@ -1,0 +1,6 @@
+@function lh($fs,$lh) {
+	@return $lh/$fs*1;
+}
+@function ptem($s,$b:16){
+	@return $s/$b*1em;
+}

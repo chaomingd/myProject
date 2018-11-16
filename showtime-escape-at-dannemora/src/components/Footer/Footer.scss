@@ -1,0 +1,105 @@
+@import '~nytpi-sass-utils/size-class';
+@import '../../scss//fn.scss';
+
+@include set-pspx-ratio(1);
+
+.BodyCopy a, a{
+	text-decoration: unset;
+	color: unset;
+	&:active{
+		text-decoration: unset;
+		color: unset;
+	}
+	&:hover{
+		text-decoration: unset;
+		color: unset;
+	}
+	&:visited{
+		text-decoration: unset !important;
+		color: unset !important;
+	}
+	&:link{
+		text-decoration: unset !important;
+		color: unset !important;
+	}
+}
+.footer {
+	margin-top: ptem(30,50);
+	margin-bottom: ptem(69,50);
+	font-size: 50/1280*100vw;
+	@include size-class(shell) {
+		font-size: 50/1280*1605px;
+	}
+	@include size-class(tablet-portrait) {
+		font-size: 50/853*100vw;
+	}
+	@include size-class(compact) {
+		font-size: 16/320*100vw;
+	}
+	@media (max-width: 640px) {
+		margin-top: 30px;
+		margin-bottom: 69px;
+	}
+	picture {
+		display: block;
+		margin: 0 auto;
+		width: 445/1160*100%;
+		font-size: 0;
+		@media (max-width: 854px) and(min-width: 540px) {
+			width: 59%;
+		}
+		@include size-class(compact) {
+			width: 85%;
+		}
+	}
+	img {
+		width: 100%;
+	}
+}
+.footerLogoContainer{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: ptem(30,50);
+	@media (max-width: 640px) {
+		margin-top: 30px;
+	}
+	.logo {
+		width: ptem(53,50);
+		@include size-class(compact) {
+			width: ptem(53);
+		}
+		picture {
+			display: block;
+			width: 100%;
+		}
+		img {
+			width: 100%;
+			vertical-align: top;
+		}
+	}
+	.footerText {
+		font-family: 'Saira',sans-serif;
+		font-weight: 600;
+		font-size: ptem(24,50);
+		line-height: ptem(28,50);
+		color: #fff;
+		margin-left: .3em;
+		text-transform: uppercase;
+		letter-spacing: .060em;
+		&:hover{
+			color: #cc0000;
+		}
+		@include size-class(compact) {
+			font-size: ptem(20);
+			line-height: lh(20,19);
+			span {
+				display: block;
+			}
+		}
+	
+	}
+}
+
+
+@include set-pspx-ratio(2);
