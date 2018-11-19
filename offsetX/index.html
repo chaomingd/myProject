@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<html xmlns="http://www.w3.org/1999/xhtml">  
+<head>  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+<title>无标题文档</title>  
+<script type="text/javascript">  
+  function drag(o){  
+    if(!document.getElementById){return false};  
+    o=document.getElementById(o);  
+    if(!o){return false};  
+    o.style.position="absolute";  
+    o.onmousedown=function(e){  
+        e=e||window.event;  
+        var x=e.layerX||e.offsetX;  
+        var y=e.layerY||e.offsetY;  
+        document.onmousemove=function(e){  
+           e=e||window.event;  
+ //获取所有浏览器的e.pageX   
+ if ( e.pageX == null && e.clientX !=  null ) {  
+    var doc = document.documentElement, body = document.body;  
+    e.pageX = e.clientX + (doc && doc.scrollLeft || body && body.scrollLeft || 0) - (doc && doc.clientLeft  || body && body.clientLeft || 0);  
+    e.pageY = e.clientY + (doc && doc.scrollTop  ||  body && body.scrollTop  || 0) - (doc && doc.clientTop  || body && body.clientTop  || 0);  
+}            
+           o.style.left=(e.pageX-x)+"px";  //如果没有滚动条，用e.clientX也是对的  
+           o.style.top=(e.pageY-y)+"px";};  
+           document.onmouseup=function(){  
+             document.onmousemove=null;  
+             o.onmousedown=null;     
+          }  
+       }  
+    }  
+</script>  
+</head>  
+<body>  
+<div id="cen">  
+<p class="control" style="margin-bottom:10px; cursor:move" title="拖拽" onmousedown="drag('cen')" >点俺拖拽</p>  
+  
+<p>1111111111111111111111</p>  
+<p>111111111111111</p>  
+<p>1111111111</p></div>  
+  
+<p style="height:900px;">测试</p>  
+</body>  
+</html> 
