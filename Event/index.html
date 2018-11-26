@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+
+<body>
+	<script src="index.js"></script>
+	<script>
+		var myEvents = new EventTarget();
+		myEvents.addEvents({
+			"once": function () {
+				alert("该弹框只会出现一次！");
+				this.removeEvent("once");
+			},
+			"infinity": function () {
+				alert("每次点击页面，该弹框都会出现！");
+			}
+		});
+
+		document.onclick = function (e) {
+			e = e || window.event;
+			var target = e.target || e.srcElement;
+			if (!target || !/input|pre/i.test(target.tagName)) {
+				myEvents.fireEvents(["once", "infinity"]);
+			}
+		};
+	</script>
+</body>
+
+</html>
