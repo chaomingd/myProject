@@ -74,7 +74,7 @@ function BST() {
 
 	this.getMin = function() {
 		var current = root;
-		while(current.left) {
+		while(current && current.left) {
 			current = current.left;
 		}
 		return current.data;
@@ -82,7 +82,7 @@ function BST() {
 
 	this.getMax = function() {
 		var current = root;
-		while(current.right) {
+		while(current && current.right) {
 			current = current.right;
 		}
 		return current.data;
@@ -158,7 +158,7 @@ function BST() {
 	}
 
 	this.remove = function(data) {
-		remove(root,data);
+		return remove(root,data);
 	}
 
 }
@@ -236,13 +236,8 @@ function postOrder(node) {
 	}
 }
 
-nums.remove(45);
-nums.remove(3);
-nums.remove(22);
-nums.remove(16);
-nums.remove(37);
+console.log(nums.remove(23));
 
 // nums.postOrder(function(node) {
 // 	console.log(node.data)
 // })
-console.dir(nums.getRoot())
