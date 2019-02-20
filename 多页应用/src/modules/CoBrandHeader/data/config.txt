@@ -1,0 +1,13 @@
+{
+	"info": {
+		"showPartnerLogo": true,
+		"partnerLogoImage": "logo_partner.png",
+		"showLegal": true,
+        "moduleName": "19CY1_EP_Gamingi7",
+        "trackingLabels": {
+            "load": "CoBrandHeader_LandingPage_Load_Headers_CoBrandGamingi7",
+            "legal": "CoBrandHeader_LandingPage_Select_LegalCTA_Legal",
+            "legalClose": "CoBrandHeader_Nav_Close_LegalCTA_Legal"
+        }
+	}
+}

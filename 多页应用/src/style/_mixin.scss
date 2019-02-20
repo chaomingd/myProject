@@ -1,0 +1,48 @@
+@mixin font-face($fontName, $showName) {
+    @font-face {
+        font-family: $showName;
+        font-weight: normal;
+        font-style: normal;
+        src: url('../../../../fonts/#{$fontName}.woff') format('woff');
+    }
+}
+
+$_default-type: 'font-size' !default;
+
+//There can be no 'PX' unit
+$_default-desktop-width-iframe: 1200 !default;
+@mixin font-size-desktop($font-size, $desktop-width: $_default-desktop-width-iframe, $type: $_default-type){
+    #{$type}: $font-size + px;
+    @media screen and (max-width: $desktop-width+px){
+        #{$type}: cal-font-size($font-size, $desktop-width);
+    }
+}
+@function cal-font-size($font-size, $cal-width){
+    @return $font-size/($cal-width/100) + vw;
+}
+
+@mixin breakpoint($value: 767px, $type: 'ltr'){
+    @for $i from 1 through 2 {
+        $out-class: 'hasScrollBar';
+        $max-width: $value;
+        @if $i == 1 {
+            $out-class: 'hasScrollBar';
+            $max-width: $value - 15px;
+        } @else {
+            $out-class: 'noScrollBar';
+		}
+		@if $type == 'ltr'{
+			.#{$out-class}, .mobile{
+				@media screen and (max-width: $max-width){
+					@content;
+				}
+			}
+		} @else{
+			&.#{$out-class}, &.mobile{
+				@media screen and (max-width: $max-width){
+					@content;
+				}
+			}
+		}
+    }
+}

@@ -1,0 +1,141 @@
+@import '../../../../style/_mixin.scss';
+
+.ChartDesktop{
+    position: absolute;
+    width: 100%;
+	height: 100%;
+	top: 0%;
+	left: 0%;
+	.content-box{
+		position: absolute;
+		@include font-size-desktop(1200, $type: 'width');
+		// top: 42.5%;
+		top: 12.5%;
+		left: 50.1%;
+		transform: translate(-50%, -0%);
+		// display: flex;
+		// justify-content: space-between;
+		color: #fffaf0;
+		.headline{
+			width: 100%;
+			font-family: "Intel Clear Pro", Tahoma, sans-serif;
+			@include font-size-desktop(55);
+			text-align: center;
+			@include font-size-desktop(0.5, $type: 'letter-spacing');
+			sup{
+				position: relative;
+				font-family: "Intel Clear", Tahoma, sans-serif;
+				font-size: 0.3em;
+				vertical-align: super;
+				line-height: 1em;
+				top: -0.5em;
+			}
+		}
+		ul{
+			width: 70%;
+			margin-left: 17%;
+			margin-top: 5%;
+			box-sizing: border-box;
+			font-size: 0px;
+			li{
+				width: 22%;
+				display: inline-block;
+				.icon-box{
+					position: relative;
+					width: 68%;
+					.animate{
+						position: absolute;
+						width: 100%;
+						top: 0%;
+						left: 0%;
+					}
+				}
+				.sub-headLine{
+					font-family: "Intel Clear Bd", Tahoma, sans-serif;
+					@include font-size-desktop(20);
+					line-height: 1.1em;
+				}
+				.sub-text{
+					font-family: "Intel Clear", Tahoma, sans-serif;
+					@include font-size-desktop(13);
+					@include font-size-desktop(-0.3, $type: 'letter-spacing');
+					margin-top: 5.5%;
+					line-height: 1.1em;
+					color: white;
+				}
+			}
+			.box2{
+				margin-left: 18%;
+				width: 25%;
+				.icon-box{
+					width: 48%;
+				}
+			}
+			.box3{
+				margin-left: 11%;
+				width: 24%;
+				.icon-box{
+					width: 48%;
+				}
+			}
+		}
+		.icon-ul{
+			li{
+				opacity: 0;
+				vertical-align: bottom;
+				transition: opacity linear .5s;
+				&[active] {
+					opacity: 1;
+				}
+			}
+		}
+		.text-ul{
+			margin-top: 2.1%;
+			li{
+				opacity: 0;
+				vertical-align: top;
+				transition: opacity linear .5s .3s;
+				&[active] {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+@include breakpoint(767px){
+	.ChartDesktop{
+		.content-box{
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
+}
+
+
+.rtl{
+	.ChartDesktop{
+		.content-box{
+			.box{
+				direction: rtl;
+			}
+			ul li{
+				.sub-headLine{
+					text-align: right;
+				}
+				.sub-text{
+					text-align: right;
+				}
+			}
+		}
+	}
+}
+
+.edge, .ie{
+	.ChartDesktop .content-box .headline sup{
+		top: -0.2em;
+	}
+}

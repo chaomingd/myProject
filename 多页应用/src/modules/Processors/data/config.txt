@@ -1,0 +1,44 @@
+{
+    "info": {
+		"leftSideInfo": {
+			"chartsInfo": {
+				"chipInfo": [
+					{
+						"chipImage": "i5.jpg"
+					},
+					{
+						"chipImage": "i7.jpg"
+					},
+					{
+						"chipImage": "i9.jpg"
+					}
+				],
+				"features": [
+					{
+						"options": [1, 1, 1]
+					},
+					{
+						"options": [0, 1, 1]
+					},
+					{
+						"options": [0, 1, 1]
+					},
+					{
+						"options": [0, 0, 1]
+					}
+				]
+			}
+		},
+		"showLegal": true,
+        "moduleName": "19CY1_EP_Gamingi7",
+        "trackingLabels": {
+					"labels": ["1_9thGenCore", "2_9thGenCore", "3_9thGenCore"],
+					"dotBtn": "Processors_Nav_Select_Processor",
+					"nextBtn": "Processors_Nav_Next_Processor",
+					"backBtn": "Processors_Nav_Back_Processor",
+					"load": "Processors_Page_Load_Processors_9thGenCore",
+					"legal": "Processors_Page_Select_LegalCTA_Legal",
+					"legalClose": "Processors_Nav_Close_LegalCTA_Legal"
+        }
+	}
+}

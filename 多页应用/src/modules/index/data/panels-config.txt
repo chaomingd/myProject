@@ -1,0 +1,41 @@
+{
+	"info": [
+		{
+			"visible": true,
+			"url": "./Header",
+			"desktopDoubleHeight": false,
+			"mobileDoubleHeight": false
+		},
+		{
+			"visible": true,
+			"url": "./Blade2",
+			"desktopDoubleHeight": false,
+			"mobileDoubleHeight": false
+		},
+		{
+			"visible": true,
+			"url": "./VideoBlade",
+			"type": "video",
+			"desktopDoubleHeight": false,
+			"mobileDoubleHeight": false
+		},
+		{
+			"visible": true,
+			"url": "./Processors",
+			"desktopDoubleHeight": false,
+			"mobileDoubleHeight": false
+		},
+		{
+			"visible": true,
+			"url": "./Blade5",
+			"desktopDoubleHeight": false,
+			"mobileDoubleHeight": false
+		},
+		{
+			"visible": false,
+			"url": "./Retailer",
+			"desktopDoubleHeight": false,
+			"mobileDoubleHeight": false
+		}
+	]
+}

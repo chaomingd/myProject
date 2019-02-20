@@ -1,0 +1,31 @@
+{
+    "info": {
+		"headLine": "PUSH PAST THE LIMIT WITH OVERCLOCKING<sup>3</sup>",
+		"listInfo": [
+			{
+				"subHeadLine": "WHAT IS OVERCLOCKING?",
+				"subText": "Increase processing power by fine-tuning your system to run your processor at higher settings than the default specification."
+			},
+			{
+				"subHeadLine": "WHAT ARE THE BENEFITS?",
+				"subText": "Higher processor settings can allow you to increase game configurations, play at higher frame rates and enable smoother gameplay for the ultimate gaming experience."
+			},
+			{
+				"subHeadLine": "HOW EASY IS IT</br>TO OVERCLOCK?",
+				"subText": "Intel® XTU is an overclocking toolkit that helps you easily change your settings and benchmark speeds to tune your system to its highest possible frequency."
+			}
+		],
+		"legal": {
+			"buttonLabel": "LEGAL",
+			"content":[
+				"Performance results are based on testing as of October 2, 2018 and may not reflect all publicly available security updates. See configuration disclosure for details. No product can be absolutely secure.",
+				"Software and workloads used in performance tests may have been optimized for performance only on Intel microprocessors. Performance tests, such as SYSmark and MobileMark, are measured using specific computer systems, components, software, operations and functions. Any change to any of those factors may cause the results to vary. You should consult other information and performance tests to assist you in fully evaluating your contemplated purchases, including the performance of that product when combined with other products. For more complete information about performance and benchmark results, visit <a href='http://www.intel.com/benchmarks' target='_blank'>http://www.intel.com/benchmarks</a>",
+				"<sup>1</sup>As measured by Mega-tasking Scenario on Total War:  WARHAMMER II - FPS while playing, streaming, recording via OBS Studio v21.0.1 and Twitch on Intel® Core™ i7-9700K Processor, PL1=95W TDP, 8C16T, Turbo up to 5.0GHz, Motherboard: GIGABYTE Z390, Graphics: NVIDIA GTX 1080Ti, Memory: 4x4GB DDR4, Storage: 512GB Intel NVMe SSD 760p, OS: Windows* 10 RS4 Build 1803, BIOS Version T0d with MCU 0x96 vs. Intel® Core™ i7-6700K Processor, PL1=95W TDP, 4C8T, Turbo up to 4.2GHz, Motherboard: ASUS Z170MPLUS, Graphics: NVIDIA GTX 1080Ti, Memory: 4x4GB DDR4, Storage: 512GB Intel NVMe SSD 760p, OS: Windows* 10 RS4 Build 1803, BIOS Version 3805 with MCU 0xC2 Intel® Core™ i5-9600K Processor, PL1=95W TDP, 6C6T, Turbo up to 4.6GHz, Motherboard: GIGABYTE Z390, Graphics: NVIDIA GTX 1080Ti, Memory: 4x4GB DDR4, Storage: 512GB Intel NVMe SSD 760p, OS: Windows* 10 RS4 Build 1803, BIOS Version T0d with MCU 0x96",
+				"Performance may vary by game title. Consult other sources of information to evaluate performance as you consider your purchase.",
+				"<sup>2</sup>Maximum processor frequency with Intel Turbo Boost 2.0.",
+				"<sup>3</sup>Altering clock frequency or voltage may damage or reduce the useful life of the processor and other system components, and may reduce system stability and performance. Product warranties may not apply if the processor is operated beyond its specifications. Check with the manufacturers of system and components for additional details",
+				"© Intel Corporation. Intel, the Intel logo and Intel Core are trademarks of Intel Corporation or its subsidiaries in the U.S. and/or other countries."
+			]
+		}
+	}
+}

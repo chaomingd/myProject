@@ -1,0 +1,11 @@
+{
+	"info": {
+		"showLegal": true,
+		"moduleName": "19CY1_EP_Gamingi7",
+		"trackingLabels": {
+			"load": "Blade2_Page_Load_Blade2_Gamingi7",
+			"legal": "Blade2_Page_Select_LegalCTA_Legal",
+			"legalClose": "Blade2_Nav_Close_LegalCTA_Legal"
+		}
+	}
+}

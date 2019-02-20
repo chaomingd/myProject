@@ -1,0 +1,339 @@
+@import '../../../../style/_mixin.scss';
+
+.ChartDesktop{
+    position: absolute;
+    width: 100%;
+	height: 100%;
+	top: 0%;
+	left: 0%;
+	.content-box{
+		position: absolute;
+		// width: 94%;
+		@include font-size-desktop(1200, $type: 'width');
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		display: flex;
+		justify-content: space-between;
+		.left-box{
+			position: relative;
+			margin-left: 4.4%;
+    		width: 69.3%;
+			box-sizing: border-box;
+			.chip-box{
+				transform: translate3d(0,0,0);
+				.title-chip{
+					display: flex;
+					justify-content: space-between;
+					// align-items: center;
+					.title-box{
+						@include font-size-desktop(400, $type: 'width');
+						p{
+							font-family: "Intel Clear Pro", Tahoma, sans-serif;
+							width: 86%;
+							@include font-size-desktop(44);
+							@include font-size-desktop(0.5, $type: 'letter-spacing');
+							color: #29ade4;
+							line-height: 0.9em;
+							text-shadow: 0px 0px 30px rgba(0, 0, 0, 1);
+							span{
+								position: relative;
+								top: 0.05em;
+								font-size: 1em;
+								line-height: 1em;
+							}
+						}
+					}
+					.chip-content{
+						@include font-size-desktop(537, $type: 'width');
+						display: flex;
+						justify-content: space-between;
+						align-items: flex-end;
+						padding: 0% 7.5% 0% 2%;
+						box-sizing: border-box;
+						.chip-text{
+							position: relative;
+							width: 19%;
+							.chip{
+								position: relative;
+								.light-box{
+									position: absolute;
+									top: 0%;
+									right: 0%;
+									width: 100%;
+									height: 100%;
+									overflow: hidden;
+									.light{
+										position: absolute;
+										width: 45%;
+										top: 0%;
+										left: 0%;
+										opacity: 0.6;
+										transform: translateX(-140%) translateY(100%)  translateZ(0) rotateZ(-45deg) scaleY(2);
+										// transform: translateX(250%) translateY(-80%) rotateZ(-45deg) scaleY(2);
+										&[active] {
+											transition: transform 700ms cubic-bezier(0.165, 0.84, 0.44, 1);
+											transform: translateX(250%) translateY(-80%) translateZ(0) rotateZ(-45deg) scaleY(2);
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			.compare-box{
+				margin-top: 4%;
+				ul{
+					li{
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+						@include font-size-desktop(57, $type: 'height');
+						// padding: 2% 0%;
+						// @include font-size-desktop(17, $type: 'padding-top');
+						// @include font-size-desktop(17, $type: 'padding-bottom');
+						&:nth-child(odd){
+							// background-color: rgba(39, 28, 38, 0.6);
+							background: linear-gradient(to right, rgba(39, 28, 38, 0.5) 10%, rgba(39, 28, 38, .8) 80%);
+							background: -o-linear-gradient(to right, rgba(39, 28, 38, 0.5) 10%, rgba(39, 28, 38, .8) 80%);
+							background: -moz-linear-gradient(to right, rgba(39, 28, 38, 0.5) 10%, rgba(39, 28, 38, 0.8) 80%);
+							background: linear-gradient(to right, rgba(39, 28, 38, 0.5) 10%, rgba(39, 28, 38, 0.8) 80%);
+						}
+						.desc-left{
+							
+							// width: 50%;
+							@include font-size-desktop(380, $type: 'width');
+							padding-left: 1.5%;
+							p{
+								font-family: "Intel Clear Bd", Tahoma, sans-serif;
+								@include font-size-desktop(14);
+								@include font-size-desktop(-0.1, $type: 'letter-spacing');
+								color: white;
+								line-height: 1.2em;
+								sup{
+									font-size: 0.6em;
+									line-height: 1em;
+								}
+							}
+							.desc{
+								font-family: "Intel Clear", Tahoma, sans-serif;
+								@include font-size-desktop(13);
+								line-height: 1.1em;
+								@include font-size-desktop(1, $type: 'margin-top');
+							}
+						}
+						.chooice-box{
+							// width: 50%;
+							@include font-size-desktop(505, $type: 'width');
+							display: flex;
+							justify-content: space-between;
+							align-items: center;
+							padding: 0% 10% 0% 5%;
+							box-sizing: border-box;
+							.hook{
+								width: 6%;
+								img{
+									opacity: 0;
+									transition: opacity 600ms cubic-bezier(0.165, 0.84, 0.44, 1);
+									&[active] {
+										opacity: 1;
+									}
+								}
+							}
+							.hide{
+								opacity: 0;
+								visibility: hidden;
+							}
+						}
+					}
+				}
+			}
+			.desc-box{
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				.space-box{
+					// width: 50%;
+					@include font-size-desktop(380, $type: 'width');
+				}
+				.desc-content{
+					// width: 50%;
+					@include font-size-desktop(564, $type: 'width');
+					display: flex;
+					justify-content: space-between;
+					// align-items: center;
+					align-items: start;
+					padding: 0% 3% 0% 0%;
+					box-sizing: border-box;
+					.desc{
+						width: 30%;
+						p{
+							font-family: 'Intel Clear', Tahoma, sans-serif;
+							color: white;
+							@include font-size-desktop(11);
+							text-align: center;
+							span{
+								font-size: 1em;
+								display: inline-block;
+							}
+						}
+					}
+				}
+			}
+		}
+		.right-box{
+			position: relative;
+			width: 25%;
+			// transform: translate3d(0 ,0 ,0);
+			.line{
+				position: absolute;
+				top: 0%;
+				// left: -3px;
+				left: -6%;
+				// width: 3px;
+				opacity: .7;
+				@include font-size-desktop(3, $type: 'width');
+				height: 100%;
+				// background: -webkit-linear-gradient(top, #212633 10%, #281a2a 20% 80%, #212633 90%);
+				// background: -o-linear-gradient(bottom, #212633 10%, #281a2a 20% 80%, #212633 90%);
+				// background: -moz-linear-gradient(bottom, #212633 10%, #281a2a 20% 80%, #212633 90%);
+				// background: linear-gradient(to bottom, #212633 10%, #281a2a 20% 80%, #212633 90%);
+			}
+			.container-box{
+				position: absolute;
+				top: 10%;
+				left: 49%;
+				transform: translateX(-50%);
+				width: 90%;
+				.headline{
+					font-family: 'Intel Clear Pro', Tahoma, sans-serif;
+					@include font-size-desktop(46);
+					color: #29ade4;
+					text-align: center;
+					line-height: 0.85em;
+					margin: 0 auto;
+					.th{
+						font-size: 0.5em;
+						vertical-align: super;
+						line-height: 1em;
+					}
+					.r{
+						font-size: 1em;
+						position: relative;
+						left: -0.1em;
+					}
+				}
+				.subline-box{
+					width: 80%;
+					margin-top: 17%;
+					margin-left: 15.5%;
+					.subline{
+						font-family: "Intel Clear", Tahoma, sans-serif;
+						@include font-size-desktop(14);
+						color: #fffaf0;
+						line-height: 1.2em;
+						margin-bottom: 3.3%;
+					}
+					.desc{
+						font-family: "Intel Clear", Tahoma, sans-serif;
+						color: #fffaf0;
+						font-size: 0px;
+						margin-top: 5.5%;
+						span{
+							font-family: "Intel Clear", Tahoma, sans-serif;
+							@include font-size-desktop(14);
+							display: inline-block;
+							vertical-align: top;
+							line-height: 1.4em;
+							font-size: inherit;
+						}
+						.arrow{
+							font-family: "Intel Clear Bd", Tahoma, sans-serif;
+							@include font-size-desktop(14);
+						}
+						.text{
+							font-family: "Intel Clear", Tahoma, sans-serif;
+							@include font-size-desktop(14);
+							width: 92%;
+							margin-left: 2%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+@include breakpoint(767px){
+	.ChartDesktop{
+		.content-box{
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
+}
+
+
+.rtl{
+	.ChartDesktop{
+		.content-box{
+			.left-box{
+				.chip-box .title-chip .title-box p{
+					direction: rtl;
+				}
+				.compare-box ul li .desc-left{
+					padding-left: 0%;
+					p{
+						text-align: right;
+					}
+				}
+			}
+			.right-box{
+				.container-box{
+					.subline-box{
+						margin-left: 8%;
+						direction: rtl;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+.edge{
+	.ChartDesktop{
+		.content-box{
+			.right-box{
+				.container-box{
+					.headline{
+						.th{
+							position: relative;
+							top: 0.2em;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.ie{
+	.ChartDesktop{
+		.content-box{
+			.right-box{
+				.container-box{
+					.headline{
+						.th{
+							position: relative;
+							top: 0.2em;
+						}
+					}
+				}
+			}
+		}
+	}
+}

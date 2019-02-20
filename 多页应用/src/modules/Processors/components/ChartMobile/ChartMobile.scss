@@ -1,0 +1,387 @@
+@import '../../../../style/_mixin.scss';
+
+.ChartMobile{
+    position: absolute;
+    width: 100%;
+	height: 100%;
+	top: 0%;
+	left: 0%;
+	opacity: 0;
+	visibility: hidden;
+}
+
+@include breakpoint(767px){
+	.ChartMobile{
+		display: block;
+		opacity: 1;
+		visibility: visible;
+		.swiper-container{
+			position: relative;
+			height: 100%;
+			display: flex;
+			.swiper-wrapper{
+				position: relative;
+				height: 100%;
+				display: flex;
+				.swiper-slide{
+					position: relative;
+					// background-color: #000000;
+					flex: 1 0 auto;
+				}
+				.swiper-slider1{
+					.title{
+						font-family: "Intel Clear Pro", Tahoma, sans-serif;
+						width: 70%;
+						margin-top: 15%;
+						margin-left: 11.5%;
+						font-size: cal-font-size(39, 414);
+						letter-spacing: cal-font-size(1, 414);
+						color: #02a0d6;
+						line-height: 1em;
+						text-shadow: 0px 0px 30px rgba(0, 0, 0, 1);
+						span{
+							position: relative;
+							top: 0.05em;
+							font-size: 1em;
+							line-height: 1em;
+						}
+					}
+					ul{
+						position: absolute;
+						top: 34.2%;
+						left: 7%;
+						width: 93%;
+						li{
+							// padding-top: cal-font-size(15, 414);
+							// padding-bottom: cal-font-size(15, 414);
+							height: cal-font-size(65, 414);
+							display: flex;
+							justify-content: space-between;
+							align-items: center;
+							&:nth-child(1){
+								background: -webkit-linear-gradient(left, rgba(30, 33, 38, 0.5) 10%, rgba(30, 33, 38, 0.8) 80%);
+								background: -o-linear-gradient(right, rgba(30, 33, 38, 0.5) 10%, rgba(30, 33, 38, 0.8) 80%);
+								background: -moz-linear-gradient(right, rgba(30, 33, 38, 0.5) 10%, rgba(30, 33, 38, 0.8) 80%);
+								background: linear-gradient(to right, rgba(30, 33, 38, 0.5) 10%, rgba(30, 33, 38, 0.8) 80%);
+							}
+							&:nth-child(3){
+								// background-color: rgba(255, 255, 255, 0.3);
+								background: -webkit-linear-gradient(to left, rgba(30, 33, 38, 0.3) 10%, rgba(30, 33, 38, .8) 80%);
+								background: -o-linear-gradient(to left, rgba(30, 33, 38, 0.3) 10%, rgba(30, 33, 38, .8) 80%);
+								background: -moz-linear-gradient(to left, rgba(30, 33, 38, 0.3) 10%, rgba(30, 33, 38, .8) 80%);
+								background: linear-gradient(to left, rgba(30, 33, 38, 0.3) 10%, rgba(30, 33, 38, .8) 80%);
+							}
+							.desc-left{
+								width: 90%;
+								padding-left: cal-font-size(12, 414);
+								p{
+									font-family: "Intel Clear Bd", Tahoma, sans-serif;
+									font-size: cal-font-size(15, 414);
+									letter-spacing: cal-font-size(-0.1, 414);
+									color: white;
+									line-height: 1.2em;
+									sup{
+										font-size: 0.6em;
+										line-height: 1em;
+									}
+								}
+								.desc{
+									font-family: "Intel Clear", Tahoma, sans-serif;
+									font-size: cal-font-size(14, 414);
+									line-height: 1.1em;
+								}
+							}
+						}
+					}
+				}
+				.swiper-slider2{
+					.chip-content{
+						width: 100%;
+						display: flex;
+						justify-content: space-between;
+						align-items: flex-end;
+						padding: 0% 10%;
+						box-sizing: border-box;
+						margin-top: 24.5%;
+						transform: translate3d(0 ,0 ,0);
+						.chip-text{
+							position: relative;
+							width: 22%;
+							transform: translate3d(0 ,0 ,0);
+							.chip{
+								position: relative;
+								transform: translate3d(0 ,0 ,0);
+								.light-box{
+									position: absolute;
+									top: 0%;
+									right: 0%;
+									width: 100%;
+									height: 100%;
+									overflow: hidden;
+									transform: translate3d(0 ,0 ,0);
+									.light{
+										position: absolute;
+										width: 45%;
+										top: 0%;
+										left: 0%;
+										opacity: 0.6;
+										transform: translateX(-140%) translateY(100%) rotateZ(-45deg) scaleY(2);
+										// transform: translateX(250%) translateY(-80%) rotateZ(-45deg) scaleY(2);
+									}
+								}
+							}
+						}
+					}
+					ul{
+						position: absolute;
+						top: 34.2%;
+						width: 100%;
+						li{
+							// padding-top: cal-font-size(15, 414);
+							// padding-bottom: cal-font-size(15, 414);
+							height: cal-font-size(65, 414);
+							display: flex;
+							justify-content: space-between;
+							align-items: center;
+							padding-left: 16%;
+							padding-right: 15%;
+							&:nth-child(1){
+								background: -webkit-linear-gradient(left, rgba(30, 33, 38, 0.5) 10%, rgba(30, 33, 38, 0.8) 80%);
+								background: -o-linear-gradient(right, rgba(30, 33, 38, 0.5) 10%, rgba(30, 33, 38, 0.8) 80%);
+								background: -moz-linear-gradient(right, rgba(30, 33, 38, 0.5) 10%, rgba(30, 33, 38, 0.8) 80%);
+								background: linear-gradient(to right, rgba(30, 33, 38, 0.5) 10%, rgba(30, 33, 38, 0.8) 80%);
+							}
+							&:nth-child(3){
+								// background-color: rgba(255, 255, 255, 0.3);
+								background: -webkit-linear-gradient(to left, rgba(30, 33, 38, 0.3) 10%, rgba(30, 33, 38, .8) 80%);
+								background: -o-linear-gradient(to left, rgba(30, 33, 38, 0.3) 10%, rgba(30, 33, 38, .8) 80%);
+								background: -moz-linear-gradient(to left, rgba(30, 33, 38, 0.3) 10%, rgba(30, 33, 38, .8) 80%);
+								background: linear-gradient(to left, rgba(30, 33, 38, 0.3) 10%, rgba(30, 33, 38, .8) 80%);
+							}
+							.hook{
+								width: 7%;
+								img{
+									opacity: 0;
+									visibility: hidden;
+								}
+							}
+							.hide{
+								opacity: 0;
+								visibility: hidden;
+							}
+						}
+					}
+					.desc-content{
+						position: absolute;
+						left: 4%;
+						width: 92%;
+						display: flex;
+						justify-content: space-between;
+						// align-items: center;
+						align-items: end;
+						padding: 0% 0%;
+						box-sizing: border-box;
+						top: 78.5%;
+						.desc{
+							width: 31%;
+							margin-top: 0%;
+							p{
+								font-family: 'Intel Clear', Tahoma, sans-serif;
+								color: white;
+								font-size: cal-font-size(9, 414);
+								text-align: center;
+								line-height: 1.3em;
+								span{
+									font-size: 1em;
+									display: inline-block;
+								}
+							}
+						}
+					}
+				}
+				.swiper-slider3{
+					.line{
+						position: absolute;
+						top: 16%;
+						left: 0px;
+						width: cal-font-size(2.8, 414);
+						height: 100%;
+						opacity: .7;
+						// background: -webkit-linear-gradient(top, #212633 10%, #281a2a 20% 80%, #212633 90%);
+						// background: -o-linear-gradient(bottom, #212633 10%, #281a2a 20% 80%, #212633 90%);
+						// background: -moz-linear-gradient(bottom, #212633 10%, #281a2a 20% 80%, #212633 90%);
+						// background: linear-gradient(to bottom, #212633 10%, #281a2a 20% 80%, #212633 90%);
+					}
+					.container-box{
+						position: absolute;
+						top: 47%;
+						// left: 50%;
+						left: 47.3%;
+						transform: translate(-50%, -50%);
+						width: 65%;
+						.headline{
+							font-family: 'Intel Clear Pro', Tahoma, sans-serif;
+							font-size: cal-font-size(46, 414);
+							color: #02a0d6;
+							text-align: center;
+							line-height: 0.85em;
+							margin: 0 auto;
+							.th{
+								font-size: 0.5em;
+								vertical-align: super;
+								line-height: 1em;
+							}
+							.r{
+								font-size: 1em;
+								position: relative;
+								left: -0.1em;
+							}
+						}
+						.subline-box{
+							width: 80%;
+							margin-top: 14%;
+							margin-left: 15.5%;
+							.subline{
+								font-family: "Intel Clear", Tahoma, sans-serif;
+								font-size: cal-font-size(14, 414);
+								color: #fffaf0;
+								line-height: 1.2em;
+								margin-bottom: 3.3%;
+							}
+							.desc{
+								font-family: "Intel Clear", Tahoma, sans-serif;
+								color: #fffaf0;
+								font-size: 0px;
+								margin-top: 5.5%;
+								span{
+									font-family: "Intel Clear", Tahoma, sans-serif;
+									font-size: cal-font-size(14, 414);
+									display: inline-block;
+									vertical-align: top;
+									line-height: 1.4em;
+									font-size: inherit;
+								}
+								.arrow{
+									font-family: "Intel Clear Bd", Tahoma, sans-serif;
+									font-size: cal-font-size(14, 414);
+								}
+								.text{
+									font-family: "Intel Clear", Tahoma, sans-serif;
+									font-size: cal-font-size(14, 414);
+									width: 92%;
+									margin-left: 2%;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.swiper-pagination{
+			position: absolute;
+			left: 46%;
+			transform: translateX(-50%);
+			width: 84px;
+			height: 20px;
+			bottom: 22px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			.swiper-pagination-bullet{
+				width: 15px;
+				height: 15px;
+				border: 1px solid white;
+				border-radius: 50%;
+			}
+			.swiper-pagination-bullet-active{
+				background-color: white;
+			}
+		}
+		.arrow-btn{
+			position: absolute;
+			width: 5.4%;
+			bottom: 2px;
+			cursor: pointer;
+			transform: translate3d(0,0,0);
+			.hover{
+				position: absolute;
+				top: 0%;
+				left: 0%;
+				opacity: 0;
+			}
+			&.swiper-button-next{
+				right: 0%;
+				transform: rotate(180deg);
+			}
+			&.swiper-button-prev{
+				left: 0%;
+			}
+		}
+		.swiper-button-disabled{
+			display: none;
+		}
+	}
+}
+
+
+.rtl{
+	.ChartMobile{
+		.swiper-container .swiper-wrapper{
+			.swiper-slide{
+				.title{
+					direction: rtl;
+				}
+			}
+			.swiper-slider1 ul li{
+				p{
+					text-align: right;
+					padding-left: 0vw;
+					// padding-right: 2.89855vw;
+				}
+			}
+			.swiper-slider3 .container-box{
+				.subline-box{
+					direction: rtl;
+					margin-left: 7%;
+				}
+			}
+		}
+	}
+}
+
+.edge{
+	.ChartMobile{
+		.swiper-container{
+			.swiper-wrapper{
+				.swiper-slider3{
+					.container-box{
+						.headline{
+							.th{
+								position: relative;
+								top: 0.2em;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.ie{
+	.ChartMobile{
+		.swiper-container{
+			.swiper-wrapper{
+				.swiper-slider3{
+					.container-box{
+						.headline{
+							.th{
+								position: relative;
+								top: 0.3em;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

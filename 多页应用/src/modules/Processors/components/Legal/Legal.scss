@@ -1,0 +1,143 @@
+@import '../../../../style/mixin.scss';
+
+.Legal{
+}
+.legal-btn{
+	position: absolute;
+	bottom: 1%;
+	left: 5%;
+    font-family: "Intel Clear", Tahoma, sans-serif;
+    // font-size: 14px;
+	@include font-size-desktop(14);
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: #29ade4;
+    cursor: pointer;
+    z-index: 1;
+	p{
+		font-size: inherit;
+	}
+}
+.legal-content {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+	top: 100%;
+	transition: top 0.5s;
+	&.legalOpen{
+		top: 0;
+	}
+    background: rgba(0, 0, 0, .7);
+    .legal-container{
+		position: absolute;
+		left: 0%;
+		top: 0%;
+		width: 100%;
+		height:100%;
+		background: #000;
+		.swiper-content{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			border-top: 50px solid rgba(0,0,0,0);
+			border-bottom: 30px solid rgba(0,0,0,0);
+			overflow: hidden;
+			.swiper-container{
+				position: absolute;
+				display: block;
+				width: 80%;
+				height: 100%;
+				top: 0%;
+				left: 50%;
+				transform: translateX(-50%);
+				.swiper-slide{
+					height: auto !important;
+					padding-bottom: 5px;
+					p{
+						padding-bottom: 1em;
+						font-size: 12px;
+						color: #ffffff;
+						font-family: 'Intel Clear', Tahoma, sans-serif;
+						font-weight: 300;
+						// text-align: left;
+						padding-right: 5px;
+						sup{
+							font-size: 0.6em;
+						}
+						strong{
+							font-size: inherit;
+						}
+						a{
+							font-size: 12px;
+							font-family: inherit, Tahoma, sans-serif;
+							color: #ffffff;
+						}
+					}
+				}
+				
+			}
+			.swiper-scrollbar{
+				position: absolute;
+				right: -15px;
+				top: 1%;
+				z-index: 50;
+				width: 5px;
+				height: 98%;
+				-ms-touch-action: none;
+				.swiper-scrollbar-drag {
+					height: 100%;
+					width: 100%;
+					position: relative;
+					background: rgba(255,255,255,.3);
+					left: 0;
+					top: 0;
+					transition: transform .3s ease;
+				}
+			}
+		}
+
+		.close{
+			font-family: 'Intel Clear', Tahoma, sans-serif;
+			position: absolute;
+			color: #ffffff;
+			cursor: pointer;
+			right: 22px;
+			top: 0px;
+			font-size: 22px;
+			line-height: 1em;
+			font-weight: bold;
+			padding: 10px;
+		}
+	}
+	
+}
+.iScrollIndicator{
+	border-radius: 5px !important;
+	border: none !important;
+	background: rgba(255, 255, 255, 0.3) !important;
+}
+.iScrollVerticalScrollbar{
+	width: 5px !important;
+	right: -15px !important;
+
+}
+
+@include breakpoint(767px){
+	.Legal{
+		left: 5.8%;
+	}
+	.legal-btn{
+		left: 7%;
+		// font-size: cal-font-size(12, 414);
+		font-size: 12px;
+	}
+}
+
+.rtl{
+	.legal-content {
+		direction: rtl;
+	}	
+}
+

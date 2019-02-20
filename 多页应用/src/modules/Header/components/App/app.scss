@@ -1,0 +1,275 @@
+@import '../../../../style/mixin.scss';
+@include font-face('IntelClearPro_W_Bd', 'Intel Clear Pro');
+@include font-face('IntelClear_WLat_Rg', 'Intel Clear');
+@include font-face('IntelClear-Bold', 'Intel Clear Bd');
+@import '../../../../style/_reset.scss';
+
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+img{
+    display: block;
+    width: 100%;
+}
+h1, p, span, div{
+    font: inherit;
+}
+
+.Header{
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    background: #000;
+	max-width: 1464px;
+	overflow: hidden;
+	.bg{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0%;
+		left: 0%;
+		background: url('./../../images/bg.jpg') no-repeat center center/cover;
+	}
+	.text-container{
+		position: absolute;
+		@include font-size-desktop(1200, $type: 'width');
+		height: 100%;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	.light{
+		position: absolute;
+		bottom: 0%;
+    	left: -11.2%;
+		@include font-size-desktop(550, $type: 'width');
+	}
+	.animate{
+		position: absolute;
+		bottom: -7%;
+		right: -5.2%;
+		@include font-size-desktop(800, $type: 'width');
+		transform: translateX(100%);
+		transition: all 600ms cubic-bezier(0.165, 0.84, 0.44, 1);
+		&[active] {
+			transform: translate3d(0,0,0);
+		}
+	}
+	.chip-box{
+		position: absolute;
+		width: 8.8%;
+		top: 66.9%;
+		left: 3%;
+		transform: translateX(-400%);
+		transition: all 600ms cubic-bezier(0.165, 0.84, 0.44, 1);
+		&[active] {
+			transform: translate3d(0,0,0);
+		}
+	}
+	.text-box1{
+		font-family: 'Intel Clear Bd', Tahoma, sans-serif;
+		position: absolute;
+		top: 8.1%;
+		left: 4%;
+		@include font-size-desktop(550, $type: 'width');
+		color: white;
+		transform: translateX(-140%);
+		transition: all 600ms cubic-bezier(0.165, 0.84, 0.44, 1);
+		&[active] {
+			transform: translate3d(0,0,0);
+		}
+		// perspective: 500;
+		// -webkit-perspective: 600;
+		// perspective-origin: 0% 50%;
+		p{
+			@include font-size-desktop(22);
+			@include font-size-desktop(0.6, $type: 'letter-spacing');
+			sup{
+				position: relative;
+				top: 0.1em;
+				font-size: 0.5em;
+			}
+			.r{
+				position: relative;
+				left: -0.2em;
+			}
+		}
+		.headline2{
+			@include font-size-desktop(0.3, $type: 'letter-spacing');
+			@include font-size-desktop(4, $type: 'margin-top');
+			font-family: 'Intel Clear Pro', Tahoma, sans-serif;
+			@include font-size-desktop(91);
+			line-height: 0.85em;
+		}
+	}
+	.text-box2{
+		font-family: 'Intel Clear', Tahoma, sans-serif;
+		position: absolute;
+		top: 68%;
+		left: 13.4%;
+		@include font-size-desktop(514, $type: 'width');
+		color: white;
+		transform: translateX(-200%);
+		transition: all 600ms cubic-bezier(0.165, 0.84, 0.44, 1);
+		&[active] {
+			transform: translate3d(0,0,0);
+		}
+		.up-to{
+			font-family: 'Intel Clear Bd', Tahoma, sans-serif;
+			@include font-size-desktop(15);
+		}
+		.title-box{
+			font-size: 0px;
+			@include font-size-desktop(-10, $type: 'margin-top');
+			.title{
+				width: 50%;
+				font-family: 'Intel Clear Pro', Tahoma, sans-serif;
+				@include font-size-desktop(65);
+				display: inline-block;
+				vertical-align: middle;
+				line-height: 1em;
+				color: #29ade4;
+			}
+			.sub-text{
+				width: 50%;
+				font-family: 'Intel Clear', Tahoma, sans-serif;
+				@include font-size-desktop(22);
+				@include font-size-desktop(10, $type: 'margin-top');
+				display: inline-block;
+				vertical-align: middle;
+				line-height: 1.2em;
+			}
+		}
+		.title-box:after{
+			content: " ";
+			display: inline-block;
+			vertical-align: middle;
+			height: 100%;
+			font-size: 0px;
+		}
+		.desc{
+			font-family: 'Intel Clear', Tahoma, sans-serif;
+			@include font-size-desktop(19.2);
+			@include font-size-desktop(2, $type: 'margin-top');
+			sup{
+				font-size: 0.5em;
+			}
+		}
+	}
+	
+    .logo-retailer{
+        position: absolute;
+		bottom: 4.9%;
+        right: 3%;
+        width: 14.2%;
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+.hasDesktopDouble{
+	.Header{
+		height: 50%;
+	}
+}
+
+@include breakpoint(767px){
+	.Header{
+		height: 100%;
+		.bg{
+			background: url('./../../images/bg-mobile.jpg') no-repeat center center/cover;
+		}
+		.text-container{
+			width: 100%;
+			height: 100%;
+		}
+		.animate{
+			bottom: -4%;
+			right: -13.2%;
+			width: 144%;
+		}
+		.light{
+			width: 15%;
+			bottom: 16%;
+			left: -22%;
+		}
+		.text-box1{
+			top: 4.5%;
+			left: 7.2%;
+			width: 88%;
+			p{
+				font-size: cal-font-size(15, 414);
+				line-height: 1.2em;
+			}
+			.headline2{
+				font-size: cal-font-size(50, 414);
+				line-height: 0.85em;
+			}
+		}
+		.chip-box{
+			width: 18%;
+			top: 67.9%;
+			left: 5.5%;
+		}
+		.text-box2{
+			top: 82%;
+			left: 7.2%;
+			width: 87%;
+			.up-to{
+				font-size: cal-font-size(11.5, 414);
+			}
+			.title-box{
+				.title{
+					width: 50%;
+					font-size: cal-font-size(45.5, 414);
+				}
+				.sub-text{
+					width: 50%;
+					font-size: cal-font-size(15.5, 414);
+					margin-top: cal-font-size(7, 414);
+				}
+			}
+			.desc{
+				font-size: cal-font-size(13.5, 414);
+				margin-top: cal-font-size(1, 414);
+			}
+		}
+		.logo-retailer{
+			bottom: auto;
+			top: 70.6%;
+			right: 5.7%;
+			width: 30.6%;
+		}
+	} 
+}
+
+.rtl{
+    .Header{
+        .text-box1{
+            direction: rtl;
+        }
+        .text-box2{
+            direction: rtl;
+        }
+        .text-box3{
+			direction: rtl;
+			.left-box .price .small{
+				left: -0.1em;
+			}
+        }
+    }
+}
+@include breakpoint(767px){
+	&.hasMobileDouble{
+		.Header{
+			height: 50%;
+		}
+	}
+}
+
+// .alone-pre{
+// 	.Header{
+// 		max-width: 1200px;
+// 	}
+// }
