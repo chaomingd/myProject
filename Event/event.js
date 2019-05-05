@@ -17,7 +17,7 @@ var listeners = {}
 			let fns = listeners[type];
 			if (!fns instanceof Array) return;
 			fns.forEach(fn => {
-				fn({
+				fn.call(this,{
 					type,
 					data: args.length <= 1 ? args[0]: [...args]
 				}, args);
