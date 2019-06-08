@@ -5,7 +5,7 @@ function nameSpace(ns) {
 	for(i = 0;i < a.length; i ++) {
 		p[a[i]] = p[a[i]] || {}
 		p = p[a[i]];
-	}
+	} 
 	return p;
 }
 gs = nameSpace('com.greensock')
