@@ -10,12 +10,12 @@ import FPGResponsiveCjsBox from './components/FPGResponsiveCjsBox'
 console.log(breakpoints);
 const Index = () => (
   <PaidPostArticle fontFamily="Open Sans" className={scss.PaidPost}>
-		{/* <MainContainer /> */}
+		<MainContainer />
 		{/* <FPGCjsBox cjsName="charLine" ></FPGCjsBox> */}
-		<FPGResponsiveCjsBox cjsName={{
+		{/* <FPGResponsiveCjsBox cjsName={{
 			'~ 539': 'charLine_M',
 			'540 ~': 'charLine'
-		}} />
+		}} /> */}
   </PaidPostArticle>
 );
 
