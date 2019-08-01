@@ -333,7 +333,8 @@ TWEEN.Tween.prototype = {
 		var elapsed;
 		var value;
 
-		if (time < this._startTime) {
+		if (time <= this._startTime) {
+			console.log('kjkjk')
 			return true;
 		}
 

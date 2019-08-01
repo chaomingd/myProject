@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		#div {
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<button id="play">play</button>
+	<button id="pause">pause</button>
+	<button id="resume">resume</button>
+	<button id="restart">restart</button>
+	<div id="div"></div>
+	<script src="./_Tween.js"></script>
+	<!-- <script src="./Tween.js"></script> -->
+	<script>
+		var id;
+		// function tick() {
+		// 	if(!TWEEN.update()) {
+		// 		cancelAnimationFrame(id)
+		// 	}
+		// 	id = requestAnimationFrame(tick);
+		// }
+		// tick();
+		var position = {x: 0}
+		var div = document.getElementById('div')
+		var tween = new Tween(position)
+		.to({x: 500},1000,true)
+		// .play()
+		.easing(Easing.Quadratic.InOut)
+		.onUpdate(function(obj) {
+			// console.log(obj.x);
+			div.style.transform = 'translateX(' + obj.x + 'px) translateZ(0)'
+		})
+		.start()
+		var playBtn = document.getElementById('play');
+		var pauseBtn = document.getElementById('pause');
+		var resumeBtn = document.getElementById('resume');
+		var restartBtn = document.getElementById('restart');
+		playBtn.onclick = function() {
+			tween.play();
+		}
+		pauseBtn.onclick = function() {
+			tween.pause();
+		}
+		resumeBtn.onclick = function() {
+			tween.resume();
+		}
+		restartBtn.onclick = function() {
+			tween.restart();
+		}
+		// console.log(tween)
+	</script>
+</body>
+</html>

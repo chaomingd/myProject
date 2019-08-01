@@ -17,5 +17,4 @@ function fn2(x) {return x + 2}
 function fn3(x) {return x + 3}
 function fn4(x) {return x + 4}
 
-
-let composeFn = compose(fn1, fn2, fn3, fn4)
+let composeFn = compose(fn1, fn2, fn3, fn4);
