@@ -1,8 +1,8 @@
 var str = `
 <ul>
-		<%= items[0] %>
-    <% for(var i in items){ %>
-        <li><%= items[i] %></li>
+		<%= data[0] %>
+    <% for(var i in data){ %>
+        <li><%= data[i] %></li>
     <% } %>
 </ul>
 `;
@@ -16,7 +16,6 @@ var escaper = /\\|'|\r|\n|\t|\u2028|\u2029/g;
 var template = function(text,data){
     var index = 0;//记录当前扫描到哪里了
 		text = text.replace(escaper,'');
-		console.log(text)
     var function_body = "var temp = '';";
     function_body += "temp += '";
     text.replace(matcher,function(match,interpolate,evaluate,offset){
@@ -27,12 +26,10 @@ var template = function(text,data){
 
         //如果是<% ... %>直接作为代码片段，evaluate就是捕获的分组
         if(evaluate){
-					console.log(evaluate)
             function_body += "';" + evaluate + "temp += '";
         }
         //如果是<%= ... %>拼接字符串，interpolate就是捕获的分组
         if(interpolate){
-					console.log(interpolate)
             function_body += "' + " + interpolate + " + '";
         }
         //递增index，跳过evaluate或者interpolate
@@ -43,7 +40,7 @@ var template = function(text,data){
         //最后的代码应该是返回temp
 		function_body += "';return temp;";
 		console.log(function_body)
-    var render = new Function('items', function_body);
+    var render = new Function('data', function_body);
     return render(data);
 }
 console.log(template(str,[1,2,3]));
