@@ -5,26 +5,21 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
-	<style>
-		div {
-			width: 100px;
-			height: 100px;
-			background: #000;
-		}
-	</style>
 </head>
 <body>
-	<div id="div"></div>
-	<!-- <script src="./throttle.js"></script> -->
+	<div id="div">
+		<div class="sub1"></div>
+		<div class="sub2"></div>
+	</div>
 	<script>
-		window.onload = function() {
-			var div = document.getElementById('div');
-			div.addEventListener('click',() => {
-			})
-			div.addEventListener('click',(e) => {
-				e.preventDefault();
-			})
-		}
+		window.addEventListener('error', (error) => {
+			console.log(error)
+			error.preventDefault();
+		}, true)
+	</script>
+	<script>
+		a.click();
+		console.log('a')
 	</script>
 </body>
 </html>
