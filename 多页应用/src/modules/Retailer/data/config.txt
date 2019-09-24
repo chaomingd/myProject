@@ -1,7 +1,0 @@
-{
-    "info": {
-        "showLink": true,
-        "link": "https://www.intel.com",
-		"showLegal": true
-    }
-}
