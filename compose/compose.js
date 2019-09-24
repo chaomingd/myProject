@@ -18,3 +18,4 @@ function fn3(x) {return x + 3}
 function fn4(x) {return x + 4}
 
 let composeFn = compose(fn1, fn2, fn3, fn4);
+console.log(composeFn(10))
