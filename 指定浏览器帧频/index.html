@@ -43,6 +43,32 @@
 			}
 		}
 		tick();
+
+		function requestTick(fps,callback) {
+			var now;
+			var then = Date.now();
+			var interval = 1000 / fps;
+			var delta;
+			var time = then;
+			var id;
+			var requestAnimationFrame = window.requestAnimationFrame;
+			var cancelAnimationFrame = window.cancelAnimationFrame;
+			function tick() {
+				id = requestAnimationFrame(tick);
+				now = Date.now();
+				delta = now - then;
+				if (delta >= interval) { // interval = 100; deltal = 112;   
+					// 这里不能简单then=now，否则还会出现上边简单做法的细微时间差问题。例如fps=10，每帧100ms，而现在每16ms（60fps）执行一次draw。16*7=112>100，需要7次才实际绘制一次。这个情况下，实际10帧需要112*10=1120ms>1000ms才绘制完成。
+					then = now - (delta % interval);
+					// console.log(delta - interval);
+					callback(); // ... Code for Drawing the Frame ...
+				}
+			}
+			tick();
+			return () => {
+				cancelAnimationFrame(id);
+			}
+		}
 	</script>
 </body>
 
