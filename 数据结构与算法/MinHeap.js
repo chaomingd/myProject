@@ -6,7 +6,7 @@ class MinHeap {
 	init(arr) {
 		this._heap.push(...arr);
 		this.size = this._heap.length;
-		var leafNodeIndex = Math.floor((this._heap.length - 2) / 2);
+		var leafNodeIndex = Math.floor((this._heap.length - 2) / 2); // 最后一个非叶节点
 		while (leafNodeIndex >= 0) {
 			this.down(leafNodeIndex);
 			leafNodeIndex--;
