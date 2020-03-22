@@ -95,6 +95,10 @@ Promise.prototype.then = function (onFulfilled, onRjected) {
 	return promise2;
 }
 
+Promise.prototype.finally = function(callback) {
+	return this.then(callback,callback)
+}
+
 
 
 function resolvePromise(promise2, x, resolve, reject) {
@@ -183,22 +187,18 @@ Promise.reject = function (reason) {
 	})
 }
 
-var promise1 = new Promise((resolve, reject) => {
-	setTimeout(() => {
-		reject('promise1');
-	}, 1000);
-}).then((data) => {
-	return new Promise((resolve, reject) => {
-		setTimeout(() => {
-			resolve('hahah')
-		}, 200)
+const promise = new Promise(function(resolve, reject) {
+  setTimeout(() => {
+		resolve('ok');
 	})
-}, (err) => { console.log(err) })
-	.then(data => {
-		console.log(data)
-	}, (err) => { console.log(err) })
+});
+// this.status = 'resolved'
+// promise.then(() => {
+
+// })
 
 
 
 
 // module.exports=Promise  // 导出模块，否则别的文件没法使用
+
